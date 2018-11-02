@@ -15,7 +15,7 @@ import Bar2D from "fusioncharts/viz/bar2d";
 import Line2D from "fusioncharts/viz/line";
 
 //Including the theme as fusion
-import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
+import FusionTheme from "fusioncharts/themes/fusioncharts.theme.candy";
 
 //Adding the chart as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme, Pie2D, Bar2D, Line2D);
@@ -33,9 +33,9 @@ const chartConfigs = {
       caption: "Jumlah Bank Sampah per Wilayah Besar",
       subcaption: "Bulan Ini",
       xaxisname: "Wilayah",
-      yaxisname: "Jumlah",
+      yaxisname: "Jumlah"
       // numberprefix: "$",
-      theme: "fusion"
+      // theme: "candy"
       // rotateValues: "0"
     },
     data: [
@@ -331,28 +331,28 @@ const chartConfigs = {
 
 // Trigerred when chart is rendered.
 // Configures the linked charts.
-const alterChart = chart => {
-  chart.configureLink({
-    type: "column2d",
-    overlayButton: {
-      message: "Back",
-      fontColor: "880000",
-      bgColor: "FFEEEE",
-      borderColor: "660000"
-    }
-  });
-};
-const endChart = chart => {
-  chart.configureLink({
-    type: "pie2d",
-    overlayButton: {
-      message: "Back",
-      fontColor: "990000",
-      bgColor: "FFFEEE",
-      borderColor: "440000"
-    }
-  });
-};
+// const alterChart = chart => {
+//   chart.configureLink({
+//     type: "column2d",
+//     overlayButton: {
+//       message: "Back",
+//       fontColor: "880000",
+//       bgColor: "FFEEEE",
+//       borderColor: "660000"
+//     }
+//   });
+// };
+// const endChart = chart => {
+//   chart.configureLink({
+//     type: "pie2d",
+//     overlayButton: {
+//       message: "Back",
+//       fontColor: "990000",
+//       bgColor: "FFFEEE",
+//       borderColor: "440000"
+//     }
+//   });
+// };
 
 class App extends React.Component {
   constructor(props) {
