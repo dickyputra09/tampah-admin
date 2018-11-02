@@ -1,12 +1,24 @@
 import React from "react";
 import { ResponsiveContainer } from "recharts";
-import FusionCharts from "fusioncharts";
+import FusionCharts from "fusioncharts/core";
 import Charts from "fusioncharts/fusioncharts.charts";
 import ReactFC from "react-fusioncharts";
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
+import Column2D from "fusioncharts/viz/column2d";
+import Pie2D from "fusioncharts/viz/pie2d";
+import Bar2D from "fusioncharts/viz/bar2d";
+import Line2D from "fusioncharts/viz/line";
 // import Select from "react-select";
 
-ReactFC.fcRoot(FusionCharts, Charts, FusionTheme);
+ReactFC.fcRoot(
+  FusionCharts,
+  Charts,
+  FusionTheme,
+  Column2D,
+  Bar2D,
+  Line2D,
+  Pie2D
+);
 
 const chartConfigs = {
   type: "column2d",
@@ -92,7 +104,7 @@ class Chart extends React.Component {
 
     this.state = {
       chart: {},
-      currentVal: "column2d"
+      currentVal: { Column2D }
     };
 
     this.renderComplete = this.renderComplete.bind(this);
@@ -105,12 +117,6 @@ class Chart extends React.Component {
   }
 
   // Handler for radio buttons to change chart type.
-  // radioHandler(e) {
-  //   this.state.chart.chartType(e.currentTarget.value);
-  //   this.setState({
-  //     currentVal: e.currentTarget.value
-  //   });
-  // }
 
   handlechange(e) {
     this.state.chart.chartType(e.currentTarget.value);
